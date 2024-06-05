@@ -1,0 +1,105 @@
+-- Basic Printing
+Print 'Hello, World!'
+
+-- Comment
+-- This is a comment
+
+-- Variables
+local player
+local playerName = "John"
+local playerHealth = 100
+local isPlayerAlive = true
+
+-- Data Types
+local stringValue = "Hello, World!"
+local intValue = 42
+local floatValue = 3.14
+local boolValue = true
+
+-- Concatenation
+local message = "Hello, " .. playerName .. "!"
+
+-- Arithmetic Operations
+local sum = 10 + 5
+local difference = 10 - 5
+local product = 10 * 5
+local quotient = 10 / 5
+local remainder = 10 % 3
+
+-- Comparison Operators
+local isEqual = (10 == 5)
+local isNotEqual = (10 ~= 5)
+local isGreaterThan = (10 > 5)
+local isLessThan = (10 < 5)
+local isGreaterThanOrEqual = (10 >= 5)
+local isLessThanOrEqual = (10 <= 5)
+
+-- Logical Operators
+local logicalAnd = (true and false)
+local logicalOr = (true or false)
+local logicalNot = not true
+
+-- Conditional Statements
+if playerHealth > 0 then
+    print("Player is alive")
+else
+    print("Player is dead")
+end
+
+-- Ternary Operator
+local message = (playerHealth > 0) and "Player is alive" or "Player is dead"
+
+-- Loops
+for i = 1, 10 do
+    print(i)
+end
+
+while playerHealth > 0 do
+    playerHealth = playerHealth - 10
+end
+
+-- Functions
+function greetPlayer(playerName)
+    print("Hello, " .. playerName .. "!")
+end
+
+greetPlayer("John")
+
+-- Tables
+local player = {
+    name = "John",
+    health = 100,
+    isAlive = true
+}
+
+print(player.name)
+print(player.health)
+print(player.isAlive)
+
+-- Table Iteration
+for key, value in pairs(player) do
+    print(key, value)
+end
+
+-- Events
+game.Players.PlayerAdded:Connect(function(player)
+    print(player.Name .. " has joined the game")
+end)
+
+-- Instantiate Object
+local part = Instance.new("Part")
+part.Parent = workspace
+
+-- Set Object Properties
+part.Size = Vector3.new(4, 2, 3)
+part.Position = Vector3.new(10, 5, 7)
+part.Color = Color3.new(1, 0, 0)
+part.Anchored = true
+
+-- Connect Events
+part.Touched:Connect(function(hit)
+    print("Part was touched by " .. hit.Name)
+end)
+
+-- Destroy Object
+part:Destroy()
